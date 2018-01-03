@@ -14,9 +14,18 @@ export default class Home extends Component{
         return (
             <View>
                 <Text>Home</Text>
-                <Button onPress={Actions.test} title="test" />
-                <Button onPress={Actions.testModal} title="testModal" />
-                <Button onPress={Actions.testLightbox} title="testLightbox" />
+                <View style={{marginTop:10}}>
+                    <Button onPress={Actions.test} title="test" />
+                </View>
+                <View style={{marginTop:10}}>
+                    <Button onPress={Actions.testModal} title="testModal" />
+                </View>
+                <View style={{marginTop:10}}>
+                    <Button onPress={Actions.testLightbox} title="testLightbox" />
+                </View>
+                <View style={{marginTop:10}}>
+                    <Button onPress={()=>Actions.login({title:'login'})} title="redux_demo" />
+                </View>
             </View>
         );
     }
