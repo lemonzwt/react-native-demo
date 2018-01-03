@@ -24,6 +24,7 @@ class Login extends Component {
         else if (nextProps.status === ActionTypes.USER_LOGIN_SUCCESS) {
             Toast.success('login success !!!', 1);
             Actions.pop();
+            return false;
         }
     }
 
