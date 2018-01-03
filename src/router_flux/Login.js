@@ -7,13 +7,15 @@ import {
 import {
     Actions
 } from 'react-native-router-flux'
-import Button from 'antd-mobile/lib/button';
-import InputItem from 'antd-mobile/lib/input-item';
-import List from 'antd-mobile/lib/list';
+import {
+    Button,
+    InputItem,
+    List,
+    Toast
+} from 'antd-mobile';
 import {connect} from 'react-redux'
 import ActionTypes from './actions'
 import LoginCommand from './actions/LoginCommand'
-import Toast from 'antd-mobile/lib/toast'
 
 class Login extends Component {
     shouldComponentUpdate(nextProps, nextState) {
