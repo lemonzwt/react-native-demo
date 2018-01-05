@@ -28,23 +28,10 @@ class Login extends Component {
         }
     }
 
-    userInputLoginName(value) {
+    userInput(value) {
         this.props.dispatch({
             type: ActionTypes.USER_LOGIN_INPUT,
-            userLogin: {
-                loginName: value,
-                password: this.props.userLogin.password
-            }
-        });
-    }
-
-    userInputPassword(value) {
-        this.props.dispatch({
-            type: ActionTypes.USER_LOGIN_INPUT,
-            userLogin: {
-                loginName: this.props.userLogin.loginName,
-                password: value
-            }
+            userLogin: {...this.props.userLogin,...value}
         });
     }
 
@@ -59,12 +46,12 @@ class Login extends Component {
                 <List style={{marginTop: 10}}>
                     <InputItem
                         value={this.props.userLogin.loginName}
-                        onChangeText={(value) => this.userInputLoginName(value)}
+                        onChangeText={(value) => this.userInput({loginName:value})}
                         placeholder="loginName"
                     >
                     </InputItem>
                     <InputItem
-                        onChangeText={(value) => this.userInputPassword(value)}
+                        onChangeText={(value) => this.userInput({password:value})}
                         value={this.props.userLogin.password}
                         placeholder="password"
                     >
